@@ -1,0 +1,217 @@
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FDFD96;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.clock{
+    position: relative;
+    width: 450px;
+    height: 450px;
+    background-color: rgb(188, 255, 185);
+    border-radius: 50%;
+    box-shadow:
+    inset 5px 5px 10px rgba(72,191,83, 0.25),
+    inset 5px 5px 20px rgba(72,191,83, 0.2),   
+    inset -5px -5px 15px rgba(72,191,83, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(72,191,83,.5);
+
+}
+
+.clock::after{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background-color: rgb(72,191,83);
+    opacity: .4;
+}
+
+.clock>span{
+    position: absolute;
+    inset: 20px;
+    color: rgb(72,191,83);
+    text-align: center;
+    transform: rotate(calc(30deg*var(--o))); /*360 = 30x12 */
+    font-weight: 600;
+    font-size: 24px;
+    opacity: .6;
+}
+
+.circle{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(72,191,83,.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.circle .i{
+    position: absolute;
+    /* width: 6px; */
+    height: 50%;
+    background-color: var(--i_color);
+    transform-origin: bottom;
+    transform: scale(.5);
+}
+
+
+
+.L span{
+    width: 3px;
+    z-index: 3;
+}
+
+.M span{
+    width: 6px;
+    z-index: 2;
+}
+
+.S span{
+    width: 9px;
+    z-index: 1;
+}
+
+
+.M{
+    width: 240px;
+    height: 240px; 
+}
+
+.S{
+    width: 180px;
+    height: 180px; 
+}
+
+.circle::after{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--i_color);
+    border-radius: 50%;
+    top: -8.5px;
+}
+
+@media(max-width: 700px) {
+    .clock{
+        width: 275px;
+        height: 275px;
+    }
+    .circle{
+        width: 150px;
+        height: 150px;
+    }
+
+    
+    .M{
+        width: 120px;
+        height: 120px; 
+    }
+
+    .S{
+        width: 90px;
+        height: 90px; 
+    }
+
+    .clock>span{
+        font-weight: 400;
+        font-size: 18px;
+        opacity: .6;
+    }
+
+    .circle::after{
+        width: 9px;
+        height: 9px;
+        top: -5px;
+    }
+
+}
+
+/* digital o'clock styling */
+
+#time{
+    margin-top: 40px;
+    display: flex;
+    padding:20px 40px;
+    font-weight: 600;
+    border: 3px solid rgba(72,191,83,.4);
+    border-radius: 40px;
+    box-shadow:
+    inset 5px 5px 10px rgba(72,191,83, 0.25),
+    inset 5px 5px 20px rgba(72,191,83, 0.2),   
+    inset -5px -5px 15px rgba(72,191,83, 0.75);
+    background-color: rgb(188, 255, 185);
+}
+
+#time div{
+    position: relative;
+    width: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--i_color);
+}
+
+#ampm{
+    -webkit-text-stroke: .4px rgb(0, 0, 0);
+    -o-text-stroke: .4px rgb(0, 0, 0);
+    -moz-text-stroke: .4px rgb(0, 0, 0);
+}
+
+#time div:nth-child(1)::after, #time div:nth-child(2)::after{
+    content: ":";
+    position: absolute;
+    right: -4px;
+}
+
+#time div:nth-child(2)::after{
+    animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+}
+
+
+footer{
+    position: absolute;
+    bottom: 20px;
+    color: rgb(72,191,83);
+    opacity: .8;
+    letter-spacing: 3px;
+}
+
+footer p i{
+    color: rgb(255, 0, 0);
+}

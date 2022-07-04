@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="https://images.emojiterra.com/openmoji/v13.1/512px/1f559.png">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/24e138188f.js" crossorigin="anonymous"></script>
+        <title>O'clock</title>
+        
+    </head>
+
+    <body onload="setInterval(turnTheIndicators); setInterval(UpdateDigitalClock)">
+        <div class="container">
+            <div class="clock">
+                
+                <div class="circle L" style="--i_color:#FFD371" id="seconds"><span class="i"></span></div>
+                <div class="circle M" style="--i_color:rgb(85, 179, 255)" id="minutes"><span class="i"></span></div>
+                <div class="circle S" style="--i_color:#FF4848" id="hours"><span class="i"></span></div>
+                
+                <span style="--o:1">1</span>
+                <span style="--o:2">2</span>
+                <span style="--o:3">3</span>
+                <span style="--o:4">4</span>
+                <span style="--o:5">5</span>
+                <span style="--o:6">6</span>
+                <span style="--o:7">7</span>
+                <span style="--o:8">8</span>
+                <span style="--o:9">9</span>
+                <span style="--o:10">10</span>
+                <span style="--o:11">11</span>
+                <span style="--o:12">12</span>
+            </div>
+
+            <!-- Digital O'clock -->
+
+            <div id="time">
+                <div id="digital_hours" style="--i_color:#FF4848">00</div>
+                <div id="digital_minutes"style="--i_color:rgb(85, 179, 255)" >00</div>
+                <div id="digital_seconds" style="--i_color:#FFD371">00</div>
+                <div id="ampm" style="--i_color:white">AM</div>
+            </div> 
+
+            <footer>
+                <p>Made with <i class="fa-solid fa-heart"></i> by Mohamed Mahdi</p>
+            </footer>
+
+        </div>
+
+
+        <script src="js/js.js" type='text/javascript'></script>
+
+    </body>
+</html>
