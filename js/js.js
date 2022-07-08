@@ -26,9 +26,9 @@ let digital_seconds = document.getElementById("digital_seconds");
 let ampm = document.getElementById("ampm");
 
 function UpdateDigitalClock(){
-    let h = new Date().getUTCHours();
-    let m = new Date().getUTCMinutes();
-    let s = new Date().getUTCSeconds();
+    let h = new Date().getHours();
+    let m = new Date().getMinutes();
+    let s = new Date().getSeconds();
 
     am_or_pm = "AM"
 
